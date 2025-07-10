@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>equide</title>
+    <style>
+        body {
+            background: #fce4ec;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .caja {
+            width: 350px;
+            height: 250px;
+            margin: 0 auto;
+            background: #ff4081;
+            border: 5px solid #ec407a;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .caja:hover {
+            transform: scale(1.05);
+        }
+
+        .moño {
+            width: 80px;
+            height: 40px;
+            background: yellow;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .mensaje {
+            background-color: beige;
+            border-radius: 30%;
+            margin-top: 30px;
+            font-size: 50px;
+            color: #880e4f;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Presiona la caja 🗣️ </h1>
+    
+    <div class="caja" id="regalo">
+        <div class="moño"></div>
+    </div>
+
+    <div class="mensaje" id="mensajeFinal">
+        <strong> Faltaba mi regalo... revisa el bolsillo de tu mochila</strong>
+    </div>
+
+    <script>
+        let contador = 0;
+        const caja = document.getElementById("regalo");
+        const mensaje = document.getElementById("mensajeFinal");
+
+        caja.addEventListener("click", function() {
+            contador++;
+            if (contador === 3) {
+                mensaje.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
